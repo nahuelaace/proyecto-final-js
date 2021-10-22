@@ -1,0 +1,172 @@
+/* Contenido de pagina principal */
+
+/* Botones de carrusel un poco mas grandes */
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    width: 4rem;
+    height: 4rem;
+}
+/* Fin botones carrusel */
+
+/* Nombre de seccion */
+.nombre-seccion{
+    padding-top: 40px;
+    font-family: $titulo;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+    /* Titulo de seccion*/
+    h2{
+        font-weight: bold;
+    }
+    
+}
+/* Fin nombre de seccion */
+
+/* Contenedor de categorias de productos */
+.container-productos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+
+    
+    
+    /* Estilos de cada categoria */
+    .contenedor-categoria{
+        display: flex;
+        justify-content: center;
+        margin: 40px auto;
+        width: 300px;
+        height: 500px;
+
+        /* Contenedor grid de dos filas */
+        .contenedor-grid-categoria{
+            display: grid;
+            grid-template-rows: 100px 400px;
+            transition: all 0.7s;
+
+            /* Titulo de categoria */
+            .nombre-categoria{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: $titulo-secundario;
+                font-size: 32px;
+                color: rgb(105, 105, 105);
+                
+            }
+            /* Contenedor de imagen */
+            .container-imagen{
+                display: flex;
+                align-items: center;
+                height: 100%;
+                margin: auto;
+                z-index: 1000;
+
+                /* Imagen */
+                .imagen{
+                    width: 300px;
+                    height: 400px;
+                }
+            } 
+        }
+
+        /* Escalado hover categoria */
+        .contenedor-grid-categoria:hover{
+            transform: scale(1.07);
+        }
+          
+    }
+}
+/* Fin contenedor categorias de productos */
+
+/* Seccion conocenos */
+.conocenos{
+    height: 600px;
+    background-color: rgb(236, 202, 128);
+
+    /* Estilos de contenedor de seccion */
+    .contenido-conocenos{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 500px;
+
+        /* Descripcion de la empresa */
+        .descripcion-empresa{
+            display: flex;
+            align-items: center;
+            
+            .padding-descripcion-conocenos{
+                display: flex;
+                align-items: center;
+                padding-left: 40px;
+                height: 150px;
+                background-color: rgb(221, 221, 221);
+                font-family: $texto;
+                font-weight: bold;
+            }
+            
+        }
+
+        /* Contenedor de imagen conocenos */
+        .contenedor-imagen-conocenos{
+            display: block;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            /* Tamaño de imagen */
+            img{
+                
+                width: 300px;
+                height: 400px;
+            }
+        }
+    }
+}
+/* Fin seccion conocenos */
+
+/* Mediaquerys contenido de pagina principal */
+/* Adaptacion de contenedor de categorias a screens entre 768px y 991px*/
+@media only screen and (min-width:768px) and (max-width:991px){
+    .container-productos{
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+/* Adaptacion de contenedor de categorias a screens de hasta 767px*/
+@media only screen and (max-width:767px){
+    .container-productos{
+        grid-template-columns: 1fr  ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    /* Adaptacion de seccion conocenos */
+    .conocenos {
+        height: 680px;
+        .padding-bottom-seccion{
+            padding-bottom: 20px;
+        }
+        /* Grid contenedor en dos filas */
+        .contenido-conocenos {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 3fr;
+
+            /* Estilos de descripcion de la empresa */
+            .descripcion-empresa .padding-descripcion-conocenos{
+                padding-right: 40px;
+                text-align: center;
+            }
+            
+            .contenedor-imagen-conocenos {
+                justify-content: center;
+            }
+        }
+
+    }
+    
+    
+}
+
+/* Fin Mediaquerys contenido pagina principal */

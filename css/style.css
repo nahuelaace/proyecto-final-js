@@ -1,0 +1,695 @@
+@charset "UTF-8";
+/* Caracteristicas globales y caracteristicas para sobreescribir boostrap*/
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Montserrat:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+* dl, * ol, * ul {
+  margin-bottom: 0;
+  padding-left: 0%;
+}
+* a {
+  text-decoration: none;
+}
+* h1, * h2, * h3, * h4, * h5, * h6, * p {
+  margin-bottom: 0%;
+}
+* a:hover {
+  color: white;
+}
+* .container-fluid {
+  margin: 0%;
+  padding: 0%;
+}
+* .nav-link, * .navbar-brand {
+  color: white;
+  padding: 0%;
+}
+* .card {
+  border: none;
+}
+
+/* Fonts importadas de google */
+/* Estilos del header */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  height: auto;
+  z-index: 2000;
+  /* Estilos del navbar */
+  /* Fin Clase contenedora boostrap */
+  /* Contenedor para separar en tres secciones el navbar */
+  /* Fin Contenedor para separar en tres secciones el navbar */
+  /* Detalle para saber como reservar una prenda */
+}
+header .navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Clase contenedora boostrap */
+  /* Fin Clase contenedora boostrap */
+}
+header .navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* Logo principal de la pagina */
+  /* clase de boostrap para cada item del navbar */
+  /* Item del navbar */
+  /* Hover de item de navbar */
+}
+header .navbar .container-fluid h1 {
+  font-family: "Cinzel Decorative", cursive;
+  font-weight: 700;
+}
+header .navbar .container-fluid .nav-item {
+  margin-bottom: 5px;
+  height: 20px;
+  padding: 0% 30px;
+  font-family: "Cinzel Decorative", cursive;
+}
+header .navbar .container-fluid .item {
+  transition: all 0.7s;
+}
+header .navbar .container-fluid .item:hover {
+  color: #dddddd;
+  transform: scale(1.2);
+}
+header .contenedor-sepadador-items {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  /* Caractaristicas para cada seccion del navbar */
+  /* Contenedor de items de navegacion dentro de la pagina */
+  /* Contenedor de logo */
+  /* Contenedor de items de redes */
+}
+header .contenedor-sepadador-items .contenedor-items {
+  display: flex;
+  align-items: center;
+}
+header .contenedor-sepadador-items .contenedor-items-1 {
+  justify-content: start;
+}
+header .contenedor-sepadador-items .contenedor-items-2 {
+  justify-content: center;
+}
+header .contenedor-sepadador-items .contenedor-items-3 {
+  justify-content: end;
+}
+header .como-reservar-prenda {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: #353535;
+  /* Texto previo a desplegar la informacion */
+  /* Desplegar informacion de reserva */
+}
+header .como-reservar-prenda .desplegar-info-reserva {
+  text-align: center;
+}
+header .como-reservar-prenda .desplegar-info-reserva .info-como-reservar {
+  display: none;
+}
+header .como-reservar-prenda .desplegar-info-reserva:hover .subrayado {
+  text-decoration: underline;
+}
+header .como-reservar-prenda .desplegar-info-reserva:hover .info-como-reservar {
+  text-align: center;
+  display: block;
+}
+
+/* Mediaqerys del Header*/
+/* Screen de mas de 750px */
+@media only screen and (min-width: 751px) {
+  /* Header fijo en el top */
+  header {
+    position: sticky;
+    top: 0px;
+  }
+}
+/* Screen de hasta 767px */
+@media only screen and (max-width: 767px) {
+  /* Header con menos items para pantallas pequeñas */
+  header .contenedor-sepadador-items {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    /* Borrado de item producto */
+    /* logo */
+    /* Borrado de items de redes */
+  }
+  header .contenedor-sepadador-items .contenedor-items-1 .item-contacto {
+    padding: 0%;
+  }
+  header .contenedor-sepadador-items .contenedor-items-1 .item-productos {
+    display: none;
+  }
+  header .contenedor-sepadador-items .contenedor-items-2 {
+    justify-content: center;
+  }
+  header .contenedor-sepadador-items .contenedor-items-3 {
+    display: none;
+  }
+}
+/* Fin header */
+/*  */
+/* Contenido de pagina principal */
+/* Botones de carrusel un poco mas grandes */
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* Fin botones carrusel */
+/* Nombre de seccion */
+.nombre-seccion {
+  padding-top: 40px;
+  font-family: "Cinzel Decorative", cursive;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  /* Titulo de seccion*/
+}
+.nombre-seccion h2 {
+  font-weight: bold;
+}
+
+/* Fin nombre de seccion */
+/* Contenedor de categorias de productos */
+.container-productos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  /* Estilos de cada categoria */
+}
+.container-productos .contenedor-categoria {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  width: 300px;
+  height: 500px;
+  /* Contenedor grid de dos filas */
+  /* Escalado hover categoria */
+}
+.container-productos .contenedor-categoria .contenedor-grid-categoria {
+  display: grid;
+  grid-template-rows: 100px 400px;
+  transition: all 0.7s;
+  /* Titulo de categoria */
+  /* Contenedor de imagen */
+}
+.container-productos .contenedor-categoria .contenedor-grid-categoria .nombre-categoria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 32px;
+  color: dimgray;
+}
+.container-productos .contenedor-categoria .contenedor-grid-categoria .container-imagen {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  z-index: 1000;
+  /* Imagen */
+}
+.container-productos .contenedor-categoria .contenedor-grid-categoria .container-imagen .imagen {
+  width: 300px;
+  height: 400px;
+}
+.container-productos .contenedor-categoria .contenedor-grid-categoria:hover {
+  transform: scale(1.07);
+}
+
+/* Fin contenedor categorias de productos */
+/* Seccion conocenos */
+.conocenos {
+  height: 600px;
+  background-color: #ecca80;
+  /* Estilos de contenedor de seccion */
+}
+.conocenos .contenido-conocenos {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 500px;
+  /* Descripcion de la empresa */
+  /* Contenedor de imagen conocenos */
+}
+.conocenos .contenido-conocenos .descripcion-empresa {
+  display: flex;
+  align-items: center;
+}
+.conocenos .contenido-conocenos .descripcion-empresa .padding-descripcion-conocenos {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  height: 150px;
+  background-color: #dddddd;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+.conocenos .contenido-conocenos .contenedor-imagen-conocenos {
+  display: block;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* Tamaño de imagen */
+}
+.conocenos .contenido-conocenos .contenedor-imagen-conocenos img {
+  width: 300px;
+  height: 400px;
+}
+
+/* Fin seccion conocenos */
+/* Mediaquerys contenido de pagina principal */
+/* Adaptacion de contenedor de categorias a screens entre 768px y 991px*/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .container-productos {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+/* Adaptacion de contenedor de categorias a screens de hasta 767px*/
+@media only screen and (max-width: 767px) {
+  .container-productos {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  /* Adaptacion de seccion conocenos */
+  .conocenos {
+    height: 680px;
+    /* Grid contenedor en dos filas */
+  }
+  .conocenos .padding-bottom-seccion {
+    padding-bottom: 20px;
+  }
+  .conocenos .contenido-conocenos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    /* Estilos de descripcion de la empresa */
+  }
+  .conocenos .contenido-conocenos .descripcion-empresa .padding-descripcion-conocenos {
+    padding-right: 40px;
+    text-align: center;
+  }
+  .conocenos .contenido-conocenos .contenedor-imagen-conocenos {
+    justify-content: center;
+  }
+}
+/* Fin Mediaquerys contenido pagina principal */
+/* Contenido de pagina principal */
+/* Botones de carrusel un poco mas grandes */
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* Fin botones carrusel */
+/* Nombre de seccion */
+.nombre-seccion {
+  padding-top: 40px;
+  font-family: "Cinzel Decorative", cursive;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  /* Titulo de seccion*/
+}
+.nombre-seccion h2 {
+  font-weight: bold;
+}
+
+/* Fin nombre de seccion */
+/* Contenedor de categorias de productos */
+.container-productos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  /* Estilos de cada categoria */
+}
+.container-productos .contenedor-categoria {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  width: 300px;
+  height: 500px;
+  /* Contenedor grid de dos filas */
+  /* Escalado hover categoria */
+}
+.container-productos .contenedor-categoria .contenedor-grid-categoria {
+  display: grid;
+  grid-template-rows: 100px 400px;
+  transition: all 0.7s;
+  /* Titulo de categoria */
+  /* Contenedor de imagen */
+}
+.container-productos .contenedor-categoria .contenedor-grid-categoria .nombre-categoria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 32px;
+  color: dimgray;
+}
+.container-productos .contenedor-categoria .contenedor-grid-categoria .container-imagen {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  z-index: 1000;
+  /* Imagen */
+}
+.container-productos .contenedor-categoria .contenedor-grid-categoria .container-imagen .imagen {
+  width: 300px;
+  height: 400px;
+}
+.container-productos .contenedor-categoria .contenedor-grid-categoria:hover {
+  transform: scale(1.07);
+}
+
+/* Fin contenedor categorias de productos */
+/* Seccion conocenos */
+.conocenos {
+  height: 600px;
+  background-color: #ecca80;
+  /* Estilos de contenedor de seccion */
+}
+.conocenos .contenido-conocenos {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 500px;
+  /* Descripcion de la empresa */
+  /* Contenedor de imagen conocenos */
+}
+.conocenos .contenido-conocenos .descripcion-empresa {
+  display: flex;
+  align-items: center;
+}
+.conocenos .contenido-conocenos .descripcion-empresa .padding-descripcion-conocenos {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  height: 150px;
+  background-color: #dddddd;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+.conocenos .contenido-conocenos .contenedor-imagen-conocenos {
+  display: block;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* Tamaño de imagen */
+}
+.conocenos .contenido-conocenos .contenedor-imagen-conocenos img {
+  width: 300px;
+  height: 400px;
+}
+
+/* Fin seccion conocenos */
+/* Mediaquerys contenido de pagina principal */
+/* Adaptacion de contenedor de categorias a screens entre 768px y 991px*/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .container-productos {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+/* Adaptacion de contenedor de categorias a screens de hasta 767px*/
+@media only screen and (max-width: 767px) {
+  .container-productos {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  /* Adaptacion de seccion conocenos */
+  .conocenos {
+    height: 680px;
+    /* Grid contenedor en dos filas */
+  }
+  .conocenos .padding-bottom-seccion {
+    padding-bottom: 20px;
+  }
+  .conocenos .contenido-conocenos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    /* Estilos de descripcion de la empresa */
+  }
+  .conocenos .contenido-conocenos .descripcion-empresa .padding-descripcion-conocenos {
+    padding-right: 40px;
+    text-align: center;
+  }
+  .conocenos .contenido-conocenos .contenedor-imagen-conocenos {
+    justify-content: center;
+  }
+}
+/* Fin Mediaquerys contenido pagina principal */
+/* Pagina de soporte */
+/* Estilos de contenido de pagina soporte */
+.body-soporte {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  padding: 30px 10%;
+  text-align: center;
+  /* Ajuste de mapa ubicacion del local*/
+}
+.body-soporte strong {
+  font-size: 18px;
+}
+.body-soporte .mapa {
+  margin-top: 30px;
+  width: 100%;
+  box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.15), -10px 10px 30px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Fin pagina soporte */
+/*  */
+/* Modelo de recuadro */
+/* Contenedor para 15 cards*/
+.container-cards {
+  width: 1200px;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 400px 400px 400px;
+  /* Estilos de cada card */
+}
+.container-cards .card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Estilos de recuadros de cards */
+  /* Estilos card 1 */
+  /* Fin estilos card 1 */
+  /* Estilos card 2 formulario de reserva*/
+  /* Fin estilos card 2 */
+  /* Animacion de separacion de cards */
+  /* Fin animacion de separacion de cards */
+}
+.container-cards .card .recuadro-cards {
+  width: 224px;
+  height: 350px;
+  border-radius: 2%;
+  box-shadow: 7px 7px 20px 0 rgba(0, 0, 0, 0.1), -7px 7px 20px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.7s;
+  /* Contenedor de imagen */
+  /* Fin contenedor de imagen */
+  /* Pie de producto */
+  /* Fin pie de producto */
+}
+.container-cards .card .recuadro-cards .container-imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 300px;
+  border-bottom: 1px solid #c4c4c4;
+  /* Imagen */
+}
+.container-cards .card .recuadro-cards .container-imagen .imagen {
+  border-top-left-radius: 2%;
+  border-top-right-radius: 2%;
+  width: 224px;
+  height: 300px;
+}
+.container-cards .card .recuadro-cards .container-precio {
+  display: grid;
+  padding: 15px;
+  grid-template-columns: 1fr 1fr;
+  /* Precio */
+  /* Fin precio */
+  /* Estado de stock */
+  /* Fin estado stock */
+}
+.container-cards .card .recuadro-cards .container-precio .precio {
+  font-family: "Cinzel Decorative", cursive;
+  text-align: center;
+}
+.container-cards .card .recuadro-cards .container-precio .estado-stock {
+  font-family: "Montserrat", sans-serif;
+  background-color: #d4ab51;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+}
+.container-cards .card .card-1 {
+  background-color: #f3f3f3;
+  z-index: 300;
+  position: absolute;
+  transition: all 0.7s;
+}
+.container-cards .card .card-2 {
+  z-index: 200;
+  position: absolute;
+  transition: all 0.7s;
+  background-color: #e4e4e4;
+  /* Descripcion de prenda y formulario */
+  /* Fin Descripcion de prenda y formulario */
+  /* Boton de reserva */
+  /* Fin boton de reserva */
+}
+.container-cards .card .card-2 .descripcion {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 2fr 8fr;
+  grid-template-columns: 1fr;
+  padding: 0px 5px 5px 5px;
+  /* Formulario */
+}
+.container-cards .card .card-2 .descripcion form {
+  margin-left: 5%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 90%;
+  grid-template-rows: 10% 30% 60%;
+  /* Talle */
+  /* opciones */
+  /* datos de cliente para reserva */
+}
+.container-cards .card .card-2 .descripcion form .talle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-cards .card .card-2 .descripcion form .opciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.container-cards .card .card-2 .descripcion form .datos-de-cliente {
+  text-align: start;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+.container-cards .card .card-2 .reserva {
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-cards .card:hover {
+  /* card 1 aumenta z-index*/
+  /* animaicon de ajuste de z-index mientras se mueve card 1 */
+  /* card 2 aumenta a un z-index mayor al del producto que se encuentra al lado */
+  /* animaicon de ajuste de z-index mientras se mueve card 2 */
+}
+.container-cards .card:hover .card-1 {
+  z-index: 500;
+  animation: fix-z-index-card-1 0.7s;
+  transform: translateX(-112px);
+}
+@keyframes fix-z-index-card-1 {
+  0% {
+    z-index: 400;
+  }
+  100% {
+    z-index: 500;
+  }
+}
+.container-cards .card:hover .card-2 {
+  display: block;
+  z-index: 400;
+  animation: fix-z-index-card-2 0.7s;
+  transform: translateX(112px);
+}
+@keyframes fix-z-index-card-2 {
+  0% {
+    z-index: 350;
+  }
+  19% {
+    z-index: 350;
+  }
+  20% {
+    z-index: 400;
+  }
+  100% {
+    z-index: 400;
+  }
+}
+
+/* Mediaquerys de cards */
+/* ajuste de contenedor de cards para pantallas de entre  991px y 1540px*/
+@media only screen and (min-width: 991px) and (max-width: 1540px) {
+  .container-cards {
+    width: 720px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 400px 400px 400px 400px 400px;
+  }
+}
+/* ajuste de contenedor de cards para pantallas de entre  651px y 990px*/
+@media only screen and (min-width: 651px) and (max-width: 990px) {
+  /* ajuste de contenedor grid */
+  .container-cards {
+    width: 480px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 400px 400px 400px 400px 400px 400px 400px 400px;
+  }
+
+  /* Esto es porque en dispositivos android el formulario no se achica en escala junto con todo lo demas en android y se ve por los costados de la card 1 */
+  .datos-de-cliente label, .datos-de-cliente input {
+    display: flex;
+    align-items: center;
+    transform: scale(0.8);
+  }
+}
+/* ajuste de contenedor de cards para pantallas de entre  651px y 990px*/
+@media only screen and (max-width: 650px) {
+  /* ajuste de contenedor grid */
+  .container-cards {
+    width: 240px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px;
+    /* ajuste de escala */
+  }
+  .container-cards .card {
+    transform: scale(0.8);
+  }
+
+  /* Esto es porque en dispositivos android el formulario no se achica en escala junto con todo lo demas y se ve por los costados de la card 1 */
+  .datos-de-cliente label, .datos-de-cliente input {
+    display: flex;
+    align-items: center;
+    transform: scale(0.8);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

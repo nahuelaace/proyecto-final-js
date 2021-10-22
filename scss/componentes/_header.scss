@@ -1,0 +1,158 @@
+/* Estilos del header */
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: auto;
+    z-index: 2000;
+    
+    /* Estilos del navbar */
+    .navbar{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        /* Clase contenedora boostrap */
+        .container-fluid{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            
+            /* Logo principal de la pagina */
+            h1{
+                font-family: $titulo;
+               font-weight: 700;
+            }
+
+            /* clase de boostrap para cada item del navbar */
+            .nav-item{
+                margin-bottom: 5px;
+                height: 20px;
+                padding: 0% 30px;
+                font-family: $titulo;
+            }
+
+            /* Item del navbar */
+            .item{
+                transition: all 0.7s;
+            }
+            /* Hover de item de navbar */
+            .item:hover{
+                color: rgb(221, 221, 221);
+                transform: scale(1.2);
+            }
+            
+        }
+        /* Fin Clase contenedora boostrap */
+    }
+    /* Fin Clase contenedora boostrap */
+
+    /* Contenedor para separar en tres secciones el navbar */
+    .contenedor-sepadador-items{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+
+        /* Caractaristicas para cada seccion del navbar */
+        .contenedor-items{
+            display: flex;
+            align-items: center;   
+        }   
+        /* Contenedor de items de navegacion dentro de la pagina */
+        .contenedor-items-1{
+            justify-content: start;
+        }
+        /* Contenedor de logo */
+        .contenedor-items-2{
+            justify-content: center;
+        }
+        /* Contenedor de items de redes */
+        .contenedor-items-3{
+            justify-content: end;
+        }
+    }
+    /* Fin Contenedor para separar en tres secciones el navbar */
+    
+    /* Detalle para saber como reservar una prenda */
+    .como-reservar-prenda{
+        display: flex;
+        justify-content: center;
+        color: white;
+        background-color: #353535;
+
+        /* Texto previo a desplegar la informacion */
+        .desplegar-info-reserva {
+            text-align: center;
+                
+            .info-como-reservar{
+                display: none;
+            }
+        }
+
+        /* Desplegar informacion de reserva */
+        .desplegar-info-reserva:hover {
+            .subrayado{
+                text-decoration: underline;
+            }
+            
+            .info-como-reservar{
+                text-align: center;
+                display: block;
+                
+            }
+        }
+    }
+}
+
+/* Mediaqerys del Header*/
+/* Screen de mas de 750px */
+@media only screen and (min-width:751px) {
+    
+    /* Header fijo en el top */
+    header{
+        position: sticky;
+        top: 0px;
+    }
+
+}
+
+
+/* Screen de hasta 767px */
+@media only screen and (max-width:767px){
+
+    /* Header con menos items para pantallas pequeñas */
+    header .contenedor-sepadador-items {
+
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        /* Borrado de item producto */
+        .contenedor-items-1 {
+            .item-contacto{
+                padding: 0%;
+            }
+            
+            .item-productos{
+                display: none;
+            }
+        }
+        /* logo */
+        .contenedor-items-2{
+            justify-content: center;
+            
+        }
+        /* Borrado de items de redes */
+        .contenedor-items-3 {
+            display: none;
+        }
+
+    }
+    
+}
+/* Fin header */
+/*  */

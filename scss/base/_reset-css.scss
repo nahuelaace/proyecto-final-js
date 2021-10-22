@@ -1,0 +1,39 @@
+/* Caracteristicas globales y caracteristicas para sobreescribir boostrap*/
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    
+
+    dl,ol,ul{
+        margin-bottom: 0;
+        padding-left: 0%;
+        
+    }
+    a{
+        
+        text-decoration: none;
+    }
+    h1, h2, h3, h4, h5, h6,p{
+        margin-bottom: 0%;
+    }
+    a:hover{
+        color:white;
+    }
+    .container-fluid{
+        margin: 0%;
+        padding: 0%;
+    }
+    .nav-link, .navbar-brand{
+        color: white;
+        padding: 0%;
+        
+    }
+    
+    .card{
+        border: none;
+
+    }
+}

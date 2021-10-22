@@ -1,0 +1,20 @@
+/* Pagina de soporte */
+/* Estilos de contenido de pagina soporte */
+.body-soporte {
+    font-family: $texto;
+    font-weight: bold;
+    padding: 30px 10%;
+    text-align: center;
+    strong{
+        font-size: 18px;
+    }
+
+    /* Ajuste de mapa ubicacion del local*/
+    .mapa {
+        margin-top: 30px;
+        width:100%;
+        box-shadow: 10px 10px 20px 0 rgb(0 0 0 / 15%), -10px 10px 30px 0 rgb(0 0 0 / 15%);
+    }
+}
+/* Fin pagina soporte */
+/*  */

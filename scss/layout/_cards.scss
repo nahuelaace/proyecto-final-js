@@ -1,0 +1,247 @@
+/* Modelo de recuadro */
+
+/* Contenedor para 15 cards*/
+.container-cards{
+    width: 1200px;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 400px 400px 400px;
+
+    /* Estilos de cada card */
+    .card{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        /* Estilos de recuadros de cards */
+        .recuadro-cards {
+            width: 224px;
+            height: 350px;
+            border-radius: 2%;
+            box-shadow: 7px 7px 20px 0 rgb(0 0 0 / 10%),  
+            -7px 7px 20px 0 rgb(0 0 0 / 10%);
+            transition: all 0.7s;
+
+            /* Contenedor de imagen */
+            .container-imagen{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: auto;
+                height: 300px;
+                border-bottom: 1px solid rgb(196, 196, 196);
+
+                /* Imagen */
+                .imagen {
+                    border-top-left-radius: 2%;
+                    border-top-right-radius: 2%;
+                    width: 224px;
+                    height: 300px;
+                }
+            }
+            /* Fin contenedor de imagen */
+
+            /* Pie de producto */
+            .container-precio{
+                display: grid;
+                padding: 15px;
+                grid-template-columns: 1fr 1fr;
+                
+                /* Precio */
+                .precio{
+                    font-family: $titulo-secundario;
+                    text-align: center;
+                }
+                /* Fin precio */
+                /* Estado de stock */
+                .estado-stock{
+                    font-family: $texto;
+                    background-color: #d4ab51;
+                    border-radius: 4px;
+                    color: white;
+                    text-align: center;
+                }
+                /* Fin estado stock */
+            }
+            /* Fin pie de producto */
+
+        }
+        /* Estilos card 1 */
+        .card-1{
+            background-color: rgb(243, 243, 243);
+            z-index: 300;
+            position:absolute;
+            transition: all 0.7s;
+        }
+        /* Fin estilos card 1 */
+        /* Estilos card 2 formulario de reserva*/
+        .card-2{
+            z-index: 200;
+            position: absolute;
+            transition: all 0.7s;
+            background-color: rgb(228, 228, 228);
+
+            /* Descripcion de prenda y formulario */
+            .descripcion{
+
+                font-family: $texto;
+                font-weight: bold;
+                text-align: center;
+                display: grid;
+                grid-template-rows: 2fr 8fr;
+                grid-template-columns: 1fr;
+                padding: 0px 5px 5px 5px;
+
+                /* Formulario */
+                form{
+                    margin-left: 5%;
+                    height: 100%;
+                    display: grid;
+                    grid-template-columns: 90%;
+                    grid-template-rows: 10% 30% 60%;
+
+                    /* Talle */
+                    .talle{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    /* opciones */
+                    .opciones{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-template-rows: 1fr 1fr ;
+                    }
+                    /* datos de cliente para reserva */
+                    .datos-de-cliente{
+                        text-align: start;
+                        display: grid;
+                        grid-template-rows: 1fr 1fr 1fr 1fr;  
+                        grid-template-columns: 1fr;
+                             
+                    }
+                }
+            }
+            /* Fin Descripcion de prenda y formulario */
+
+            /* Boton de reserva */
+            .reserva{
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                    
+            }
+            /* Fin boton de reserva */
+        }
+        /* Fin estilos card 2 */
+
+        /* Animacion de separacion de cards */
+        &:hover{
+            /* card 1 aumenta z-index*/
+            .card-1{
+                z-index: 500;
+                animation: fix-z-index-card-1 0.7s;
+                transform: translateX(-112px);
+            }
+            /* animaicon de ajuste de z-index mientras se mueve card 1 */
+            @keyframes fix-z-index-card-1 {
+                0%{
+                    z-index: 400;
+                }
+                100%{
+                    z-index: 500;
+                }
+            }
+            /* card 2 aumenta a un z-index mayor al del producto que se encuentra al lado */
+            .card-2{
+                display: block;
+                z-index: 400;
+                animation: fix-z-index-card-2 0.7s;
+                transform: translateX(112px);
+                
+            }
+            /* animaicon de ajuste de z-index mientras se mueve card 2 */
+            @keyframes fix-z-index-card-2 {
+                0%{
+                    z-index: 350;
+                }
+                19%{
+                    z-index: 350;
+                }
+                20%{
+                    z-index: 400;
+                }
+                100%{
+                    z-index: 400;
+                }
+            }
+            
+        }
+        /* Fin animacion de separacion de cards */
+        
+    }
+
+
+}
+
+/* Mediaquerys de cards */
+/* ajuste de contenedor de cards para pantallas de entre  991px y 1540px*/
+@media only screen and  (min-width:991px) and (max-width:1540px){
+    .container-cards {
+        width: 720px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 400px 400px 400px 400px 400px;
+    }
+}
+/* ajuste de contenedor de cards para pantallas de entre  651px y 990px*/
+@media only screen and  (min-width:651px) and (max-width:990px){
+    /* ajuste de contenedor grid */
+    .container-cards {
+        width: 480px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 400px 400px 400px 400px 400px 400px 400px 400px;
+        
+    }
+    /* Esto es porque en dispositivos android el formulario no se achica en escala junto con todo lo demas en android y se ve por los costados de la card 1 */
+    .datos-de-cliente{
+        label, input{
+        display: flex;
+        align-items: center;
+        transform: scale(0.8);
+        
+        }
+    }
+}
+
+
+/* ajuste de contenedor de cards para pantallas de entre  651px y 990px*/
+@media only screen and (max-width:650px){
+    /* ajuste de contenedor grid */
+    .container-cards {
+        width: 240px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px;
+        
+        /* ajuste de escala */
+        .card{
+            transform: scale(0.8);
+            
+        }
+    }
+    /* Esto es porque en dispositivos android el formulario no se achica en escala junto con todo lo demas y se ve por los costados de la card 1 */
+    .datos-de-cliente{
+        label, input{
+        display: flex;
+        align-items: center;
+        transform: scale(0.8);
+        
+        }
+    }
+}
