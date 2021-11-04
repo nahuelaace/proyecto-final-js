@@ -91,7 +91,7 @@ class Pedido{
     confirmarPedido(){
         this.calculoProductosSinDescuento();
         this.calcularMontoTotal();
-        this.mostrarPedido();
+
     }
 
     // Metodo mostrar por pantalla el pedido registrado
@@ -170,24 +170,36 @@ class Carrito{
 }
 
 
+let bigBoxWith = document.getElementById("realizar-pedido");
+bigBoxWith.addEventListener('click', (e) => {
+    realizarPedido();
+});
 
-// Saludo al cliente
-alert("Buenas! Somos una tienda de ropa \n \nA continuacion le mostramos nuestra lista de precios");
+function realizarPedido() {
 
-// Recordatorio de descuentos cada 3 productos
-alert("Le recordamos que tenemos una PROMOCION \nCada 3 de un mismo producto usted tendra un 15% de descuento sobre esos 3");
+    // Saludo al cliente
+    alert("Buenas! Somos una tienda de ropa \n \nA continuacion le mostramos nuestra lista de precios");
 
-// Agregando productos al carrito
-const carrito = new Carrito();
-carrito.agregarAlCarrito();
+    // Recordatorio de descuentos cada 3 productos
+    alert("Le recordamos que tenemos una PROMOCION \nCada 3 de un mismo producto usted tendra un 15% de descuento sobre esos 3");
 
-// Mostrando pedido resgistrado1
-const pedido = new Pedido(carrito.contProductos);
-pedido.confirmarPedido();
+    // Agregando productos al carrito
+    const carrito = new Carrito();
+    carrito.agregarAlCarrito();
 
-console.log(pedido);
+    // Mostrando pedido resgistrado1
+    const pedido = new Pedido(carrito.contProductos);
+    pedido.confirmarPedido();
+    console.log(pedido);
 
-// Despedida
-alert("Gracias por comprar adios!");
+    // Despedida
+    alert("Gracias por comprar adios!");
 
+    // Muestra de pedido por pantalla
+    let presupuesto = document.getElementById("presupuesto");
+    let contenidoPedido = document.createElement("div");
+    contenidoPedido.innerHTML = "<h4 class='padding-presupuesto'>Pedido registrado</h4> <br>"+pedido.cantidadRemeras+" remeras $"+pedido.montoRemeras+"<br>"+pedido.cantidadPantalones+" pantalones $"+pedido.montoPantalones+"<br>"+pedido.cantidadZapatillas+" zapatillas $"+pedido.montoZapatillas+"<br><strong>TOTAL:</strong> $"+pedido.montoTotal;
+    presupuesto.appendChild(contenidoPedido);
+
+}
 
