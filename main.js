@@ -203,3 +203,41 @@ function realizarPedido() {
 
 }
 
+
+let urlCatalogo = "catalogo.json";
+
+$('#btn-catalogo').click(function (e) { 
+
+    $.getJSON(urlCatalogo,
+        function (catalogo, estado) {
+            
+            if (estado === "success") {
+                for (const dato of catalogo){
+          
+                  /* Pintado productos */
+                  $('#grilla-presupuesto').append(
+                    `
+                    <div class="container row flex-nowrap pt-4  ">
+    
+                        
+                        <div class="col-5 border border-dark">
+                            <p >${dato.producto}</p>
+                        </div>
+                        <div class="col-4 border border-dark">
+                            <p >$${dato.precio}</p>
+                        </div>
+                        <div class="col-7 border border-dark">
+                            <a href="${dato.url}" class="d-inline">Ver prendas</a>
+                        </div>
+    
+                    </div>
+                    `
+                  );
+    
+                };
+            };
+        }
+    );
+    
+});
+

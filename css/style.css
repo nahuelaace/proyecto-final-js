@@ -272,7 +272,7 @@ header .como-reservar-prenda .desplegar-info-reserva:hover .info-como-reservar {
 
 /* Fin seccion conocenos */
 /* Seccion presupuesto */
-.presupuesto {
+.presupuesto, .seccion-catalogo-precios {
   padding: 20px;
   height: auto;
   display: flex;
@@ -281,7 +281,7 @@ header .como-reservar-prenda .desplegar-info-reserva:hover .info-como-reservar {
   align-items: center;
   background-color: #ecca80;
 }
-.presupuesto .btn-presupuesto {
+.presupuesto .btn-presupuesto, .presupuesto .btn-catalogo, .seccion-catalogo-precios .btn-presupuesto, .seccion-catalogo-precios .btn-catalogo {
   width: 150px;
   height: 100px;
   background-color: #dddddd;
@@ -294,7 +294,7 @@ header .como-reservar-prenda .desplegar-info-reserva:hover .info-como-reservar {
   text-align: center;
   margin: 0% auto;
 }
-.presupuesto .muestra-presupuesto {
+.presupuesto .muestra-presupuesto, .seccion-catalogo-precios .muestra-presupuesto {
   width: 300px;
   text-align: center;
   display: flex;
@@ -303,7 +303,7 @@ header .como-reservar-prenda .desplegar-info-reserva:hover .info-como-reservar {
   align-items: center;
   height: auto;
 }
-.presupuesto .muestra-presupuesto .padding-presupuesto {
+.presupuesto .muestra-presupuesto .padding-presupuesto, .seccion-catalogo-precios .muestra-presupuesto .padding-presupuesto {
   padding-top: 20px;
 }
 
@@ -456,7 +456,7 @@ header .como-reservar-prenda .desplegar-info-reserva:hover .info-como-reservar {
 
 /* Fin seccion conocenos */
 /* Seccion presupuesto */
-.presupuesto {
+.presupuesto, .seccion-catalogo-precios {
   padding: 20px;
   height: auto;
   display: flex;
@@ -465,7 +465,7 @@ header .como-reservar-prenda .desplegar-info-reserva:hover .info-como-reservar {
   align-items: center;
   background-color: #ecca80;
 }
-.presupuesto .btn-presupuesto {
+.presupuesto .btn-presupuesto, .presupuesto .btn-catalogo, .seccion-catalogo-precios .btn-presupuesto, .seccion-catalogo-precios .btn-catalogo {
   width: 150px;
   height: 100px;
   background-color: #dddddd;
@@ -478,7 +478,7 @@ header .como-reservar-prenda .desplegar-info-reserva:hover .info-como-reservar {
   text-align: center;
   margin: 0% auto;
 }
-.presupuesto .muestra-presupuesto {
+.presupuesto .muestra-presupuesto, .seccion-catalogo-precios .muestra-presupuesto {
   width: 300px;
   text-align: center;
   display: flex;
@@ -487,7 +487,7 @@ header .como-reservar-prenda .desplegar-info-reserva:hover .info-como-reservar {
   align-items: center;
   height: auto;
 }
-.presupuesto .muestra-presupuesto .padding-presupuesto {
+.presupuesto .muestra-presupuesto .padding-presupuesto, .seccion-catalogo-precios .muestra-presupuesto .padding-presupuesto {
   padding-top: 20px;
 }
 

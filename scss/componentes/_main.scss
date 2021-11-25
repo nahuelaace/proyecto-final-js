@@ -126,7 +126,7 @@
 /* Fin seccion conocenos */
 
 /* Seccion presupuesto */
-.presupuesto{
+.presupuesto , .seccion-catalogo-precios{
     padding: 20px;
     height: auto;
     display: flex;
@@ -135,7 +135,7 @@
     align-items: center;
     background-color: rgb(236, 202, 128);
     
-    .btn-presupuesto{
+    .btn-presupuesto, .btn-catalogo{
         width: 150px;
         height: 100px;
         background-color: rgb(221, 221, 221);
@@ -164,6 +164,7 @@
     }
 
 }
+
 
 /* Fin seccion presupuesto */
 /* Mediaquerys contenido de pagina principal */
