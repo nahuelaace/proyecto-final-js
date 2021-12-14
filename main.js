@@ -1,4 +1,4 @@
-
+/* 
 // Clase pedido
 class Pedido{
 
@@ -171,6 +171,7 @@ class Carrito{
 
 
 let bigBoxWith = document.getElementById("realizar-pedido");
+
 bigBoxWith.addEventListener('click', (e) => {
     realizarPedido();
 });
@@ -201,36 +202,98 @@ function realizarPedido() {
     contenidoPedido.innerHTML = "<h4 class='padding-presupuesto'>Pedido registrado</h4> <br>"+pedido.cantidadRemeras+" remeras $"+pedido.montoRemeras+"<br>"+pedido.cantidadPantalones+" pantalones $"+pedido.montoPantalones+"<br>"+pedido.cantidadZapatillas+" zapatillas $"+pedido.montoZapatillas+"<br><strong>TOTAL:</strong> $"+pedido.montoTotal;
     presupuesto.appendChild(contenidoPedido);
 
-}
+} */
 
 
-let urlCatalogo = "catalogo.json";
+let urlCatalogo = "stock.json";
 
-$('#btn-catalogo').click(function (e) { 
+$(document).ready(function (e) { 
 
     $.getJSON(urlCatalogo,
         function (catalogo, estado) {
             
             if (estado === "success") {
-                for (const dato of catalogo){
-          
+                for (const prenda of catalogo){
+                    
                   /* Pintado productos */
-                  $('#grilla-presupuesto').append(
-                    `
-                    <div class="container row flex-nowrap pt-4  ">
-    
-                        
-                        <div class="col-5 border border-dark">
-                            <p >${dato.producto}</p>
+                  $('#catalogo').append(
+                    `                    
+                    <!-- Card 1 y card 2 -->
+                    <div class="card">
+        
+                        <!-- Card 1 -->
+                        <div class="recuadro-cards card-1">
+        
+                            <!-- Contenedor imagen -->
+                            <div class="container-imagen">
+                                <img class="imagen" src="${prenda.img}" alt="${prenda.producto}">
+                            </div>
+                            <!-- Fin contentedor imagen -->
+        
+                            <!-- Contenedor descripcion -->
+                            <div class="container-precio">
+        
+                                <!-- Precio -->
+                                <p class="precio"> <strong>$${prenda.precio}</strong></p>
+        
+                                <!-- Estado en stock -->
+                                <p class="estado-stock"><strong>${prenda.estado}</strong></p>    
+        
+                            </div>
+                            <!-- Fin contenedor descripcion -->
+        
                         </div>
-                        <div class="col-4 border border-dark">
-                            <p >$${dato.precio}</p>
+                        <!-- Fin card 1 -->
+        
+                        <!-- Card 2 -->
+                        <div class="recuadro-cards card-2">
+        
+                            <!-- contenedor descripcion y formulario -->
+                            <div class="container-imagen descripcion">
+                                
+                                <!-- Descripcion -->
+                                <p>Abgrigo Grande Hombre</p>
+                                <!-- Fin decripcion -->
+        
+                                <!-- Formulario -->
+                                <form method="POST" action="enviar2.php">
+                                    
+                                    <!-- Seleccion de talle -->
+                                    <label class="talle" for="talle">Talle</label>
+                                    <section class="opciones">
+                                        <div><input type="radio" name="talle-xs" value="xs" id="talle"> XS</div>
+                                        <div><input type="radio" name="talle-s" value="s" id="talle"> S</div>
+                                        <div><input type="radio" name="talle-m" value="m" id="talle"> M</div>
+                                        <div><input type="radio" name="talle-l" value="l" id="talle"> L </div>
+                                        <div><input type="radio" name="talle-xl" value="xl" id="talle"> XL</div>
+                                        <div><input type="radio" name="talle-xxl" value="xxl" id="talle"> XXL</div>
+                                    </section>
+                                    <!-- Fin seleccion de talle -->
+        
+                                    <!-- Datos del cliente -->
+                                    <section class='datos-de-cliente'>
+                                        <label for="nombre">Nombre</label> 
+                                        <input type="text" name="nombre" id="nombre" placeholder="Nombre"> 
+                                        <label for="email-cliente">Email</label>
+                                        <input type="email" name="email-cliente" id="email-cliente" placeholder="Email">
+                                    </section>
+                                    <!-- Fin datos del cliente -->
+        
+                                </form>
+                                <!-- Fin formulario -->
+        
+                            </div>
+                            <div class="reserva">
+                                
+                                <a tabindex="0" class="btn btn-dark " role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" title="Reservado!" data-bs-content="Ya hemos recibido tu reserva, acercate a la tienda con tu nombre y correo electronico para retirar tu pedido">RESERVAR</a>
+                    
+                            </div>
+        
                         </div>
-                        <div class="col-7 border border-dark">
-                            <a href="${dato.url}" class="d-inline">Ver prendas</a>
-                        </div>
-    
+                        <!-- Fin card 2 -->
+        
                     </div>
+                    <!-- Fin card 1 y card 2 -->
                     `
                   );
     
@@ -240,4 +303,3 @@ $('#btn-catalogo').click(function (e) {
     );
     
 });
-
