@@ -107,13 +107,13 @@
 
             <!-- Seccion para hace hover -->
             <div class="desplegar-info-reserva">
-                <p class="subrayado">->> Como reservar una prenda <<-</p>
+                <p class="subrayado">->> Como comprar una prenda <<-</p>
 
                 <!-- Informacion de reserva -->
                 <div class="info-como-reservar">
                    <p>
-                       Para reservar una prenda solo debes seleccionarla, completar el formulario y luego 
-                       con tu reserva podes pasar a retirar la prenda por nuestro local
+                       Para comprar una prenda solo debes seleccionarla, completar el formulario y luego 
+                       con tu carrito cargado podes pasar a retirar tus prendas por nuestro local
                     </p> 
                 </div>
                 <!-- Fin informacion de reserva -->
@@ -147,8 +147,7 @@
 
             <section class="head-carrito">
                 <h3>Carrito</h3>
-
-                <button id="salir-carrito">X</button>
+                <a id="salir-carrito" tabindex="0" class="btn btn-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom">X</a>
             </section>
             
             
@@ -162,7 +161,7 @@
 
             <section id="montos-totales" class="footer-carrito">
                 <p>Total: <span id="total-carrito"></span> </p>
-                <button id="vaciar-carrito">Vaciar carrito</button>
+                <a id="vaciar-carrito" tabindex="0" class="btn btn-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom">VACIAR CARRITO</a>
             </section>
             
         </section>
