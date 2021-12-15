@@ -132,39 +132,64 @@
 
         <!-- Nombre de catalogo -->
         <h2 class="nombre-seccion">Abrigos</h2>
+
         <!-- Contenedor de card de producto y formulario -->
         <section class="container-cards" id="catalogo">
+
         </section>
         <!-- Fin Contenedor de card de producto y formulario -->
         
+        <!-- Boton para mostrar carrito -->
         <div>
+
             <button class="mostrar-carrito" id="mostrar-carrito">
                 <img src="/imagenes/carrito.png" alt="carrito de compras">
             </button>
+            
         </div>
+        <!-- Fin boton para mostrar carrito -->
 
+        <!-- Carrito de compras -->
         <section class="carrito" id="carrito">
 
+            <!-- Head de carrito -->
             <section class="head-carrito">
+
                 <h3>Carrito</h3>
+
+                <!-- Boton cerrar carrito -->
                 <a id="salir-carrito" tabindex="0" class="btn btn-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom">X</a>
+           
             </section>
+            <!-- Fin head de carrito -->
             
-            
+            <!-- Contenedor items guardados en carrito -->
             <section class="contenedor-grilla" id="contenedor-grilla">
 
+                <!-- lista de items -->
                 <section id="grilla-de-compra">
 
                 </section>
+                <!-- Fin lista de items -->
 
             </section>
+            <!-- Fin contenedor items guardados en carrito -->
 
-            <section id="montos-totales" class="footer-carrito">
+            <!-- Footer carrito -->
+            <section id="monto-total" class="footer-carrito">
+
+                <!-- Monto total de compra -->
                 <p>Total: <span id="total-carrito"></span> </p>
+                
+                <!-- Boton vaciar carrito -->
                 <a id="vaciar-carrito" tabindex="0" class="btn btn-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom">VACIAR CARRITO</a>
-            </section>
             
+            </section>
+            <!-- Fin Footer carrito -->
+
         </section>
+        <!-- Fin Carrito de compras -->
+
     </section>
     <!-- Fin seccion catalogo -->
 

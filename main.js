@@ -1,8 +1,11 @@
+/* arreglo auxiliar donde se guarda el pedido */
 let arrayPedido = [];
+/* contador de productos pedidos */
 let contadorProductos = 1;
-
+/* catalogo completo */
 let urlCatalogo = "stock.json";
 
+/* Ejecucion */
 $(document).ready(function (e) { 
 
     $.getJSON(urlCatalogo,
@@ -96,9 +99,7 @@ $(document).ready(function (e) {
 
 
                     /* Agregado de productos al Carrito */
-                    $(`#btn-${prenda.id}`).click(function (e) { 
-                        
-                        
+                    $(`#btn-${prenda.id}`).click(function (e) {
                         
                         /* Animacion de agregado al carrito */
                         $('.mostrar-carrito').fadeOut(200, ()=>{
@@ -137,8 +138,6 @@ $(document).ready(function (e) {
                                 </div>
                                 `   
                             )
-                        }else{
-                            alert('Los productos se seguiran acumulando en el carrito pero solo se mostraran los primeros 20 pedidos');
                         }
                         
             
