@@ -145,18 +145,24 @@ $(document).ready(function (e) {
                                 </div>
                                 `   
                             )
+                        } 
+
+                        /* Advertencia de muestra maxima en carrito */
+                        if (JSON.parse(localStorage.getItem('contador')) == 19) {
+                            alert('El maximo de productos para mostrar en carrito es de 20, si sigue agregando se seguiran acumulando pero no se mostraran');
                         }
                         
-            
+                        /* Actualizacion de contador en local storage */
                         localStorage.setItem('contador', JSON.stringify(contadorProductos))
                         contadorProductos++;
-            
+                        
                         total = 0;
-            
+                        
+                        /* monto total de compra */
                         arrayPedido.map(suma => total += suma.precio)
                         $('#total-carrito').html(`
                     
-                        ${parseInt(total*1.21)}
+                          ${parseInt(total*1.21)}
                     
                         `);
                     });
@@ -171,65 +177,77 @@ $(document).ready(function (e) {
 
     /* Traída de datos del Local Storage */
     let pedido = JSON.parse(localStorage.getItem('pedido'))
-        
+    
+    /* Seteo de carrito de compras para cuando el carrito ya ha sido cargado anteriormente */
     if (pedido != null) {
-  
-      contadorProductos = JSON.parse(localStorage.getItem('contador'))
-  
-      for (const productoPedido of pedido) {
-  
-        arrayPedido.push(productoPedido)
-  
-        $('#grilla-de-compra').append(
-            `      
-            <div class="item-carrito">
-                <img class="img-carrito" src="${productoPedido.img}" alt="">
-                <p class="">${productoPedido.producto}</p>
-                <p>$${productoPedido.precio}</p>
-            </div>
-            `
-        );
+        
+        contadorProductos = JSON.parse(localStorage.getItem('contador'))
+            
+        for (const productoPedido of pedido) {
+            
+            /* Seteo de arreglo auxiliar */
+            arrayPedido.push(productoPedido)
+            
+            /* Pintado de productos en carrito */
+            $('#grilla-de-compra').append(
+                `      
+                <div class="item-carrito">
+                    <img class="img-carrito" src="${productoPedido.img}" alt="">
+                    <p class="">${productoPedido.producto}</p>
+                    <p>$${productoPedido.precio}</p>
+                </div>
+                `
+            );
 
-      }
-  
-      pedido.map(suma => total += suma.precio)
-  
-      $('#total-carrito').html(`
-                    
-        ${parseInt(total*1.21)}
+        }
+        
+        /* Seteo de monto total */
+        pedido.map(suma => total += suma.precio)
+    
+        $('#total-carrito').html(`
+                        
+            ${parseInt(total*1.21)}
 
-    `);
-  
-      contadorProductos++;
+        `);
+        
+        contadorProductos++;
     }
 });
 
 
 
-
+/* Boton muestra de carrito */
 $('#mostrar-carrito').click(function (e) { 
     
     $('#carrito').fadeIn(100);
     $('#mostrar-carrito').fadeOut(100);
 
 });
+/* Fin boton muestra de carrito */
 
+/* Boton salir del carrito */
 $('#salir-carrito').click(function (e) { 
     
     $('#carrito').fadeOut(100);
     $('#mostrar-carrito').fadeIn(100);
 
 });
+/* Fin boton salir de carrito */
 
-
+/* Boton vaciar carrito */
 $('#vaciar-carrito').click(function (e) { 
     
+    /* Reset de acumuladores y local storage */
     localStorage.setItem('pedido',null)
     localStorage.setItem('contador',null)
-    let itemsABorrar = document.getElementById('grilla-de-compra');
-    itemsABorrar.parentNode.removeChild(itemsABorrar);
     arrayPedido = [];
     contadorProductos = 1;
+    /* Fin reset */
+
+    /* Reset de carrito */
+    let itemsABorrar = document.getElementById('grilla-de-compra');
+    itemsABorrar.parentNode.removeChild(itemsABorrar);
+
     $('#contenedor-grilla').append(
         `      
         <section id="grilla-de-compra">
@@ -242,7 +260,9 @@ $('#vaciar-carrito').click(function (e) {
         0
 
     `);
+    /* Fin reset de carrito */
 });
+/* Fin boton vaciar carrito */
 
 
 
