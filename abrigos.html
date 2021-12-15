@@ -137,8 +137,35 @@
         </section>
         <!-- Fin Contenedor de card de producto y formulario -->
         
-        
+        <div>
+            <button class="mostrar-carrito" id="mostrar-carrito">
+                <img src="/imagenes/carrito.png" alt="carrito de compras">
+            </button>
+        </div>
 
+        <section class="carrito" id="carrito">
+
+            <section class="head-carrito">
+                <h3>Carrito</h3>
+
+                <button id="salir-carrito">X</button>
+            </section>
+            
+            
+            <section class="contenedor-grilla" id="contenedor-grilla">
+
+                <section id="grilla-de-compra">
+
+                </section>
+
+            </section>
+
+            <section id="montos-totales" class="footer-carrito">
+                <p>Total: <span id="total-carrito"></span> </p>
+                <button id="vaciar-carrito">Vaciar carrito</button>
+            </section>
+            
+        </section>
     </section>
     <!-- Fin seccion catalogo -->
 
@@ -252,7 +279,8 @@
     </script>
     <!-- Fin Scripts para botones de reserva boostrap -->
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script src="classes.js"></script>   
     <script src="main.js"></script>
 </body>
 </html>

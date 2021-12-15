@@ -7,7 +7,7 @@
     { "id": 6,"producto": "Abrigo Negro", "img": "imagenes/Abrigos/6-abrigo-negro-1.WebP" , "precio": 5000,  "estado": "En stock"},
     { "id": 7,"producto": "Abrigo Negro Mujer", "img": "imagenes/Abrigos/7-abrigo-negro-mujer.WebP" , "precio": 7000,  "estado": "En stock"},
     { "id": 8,"producto": "Abrigo cuadrille clasico", "img": "imagenes/Abrigos/8-agrigo-cuadros.WebP" , "precio": 7000,  "estado": "En stock"},
-    { "id": 9,"producto": "Campera de jean", "img": "imagenes/Abrigos/9-campera-de-jean.WebP" , "precio": 15000,  "estado": "En stock"},
+    { "id": 9,"producto": "Campera de jean", "img": "imagenes/Abrigos/9-campera-de-jean.WebP" , "precio": 999999999,  "estado": "En stock"},
     { "id": 10,"producto": "Abrigo cuadrille hombre", "img": "imagenes/Abrigos/10-abrigo-cuadrille-hombre.WebP" , "precio": 11000,  "estado": "En stock"},
     { "id": 11,"producto": "Saco Elegante Crema", "img": "imagenes/Abrigos/11-saco-elegante-crema.WebP" , "precio": 9000,  "estado": "En stock"},
     { "id": 12,"producto": "Saco Grande Crema", "img": "imagenes/Abrigos/12-saco-grande-crema.WebP" , "precio": 17000,  "estado": "En stock"},
