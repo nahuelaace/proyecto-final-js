@@ -96,9 +96,10 @@ $(document).ready(function (e) {
                     <!-- Fin card 1 y card 2 -->
                     `
                   );
+                  /* Fin pintado de productos */
 
 
-                    /* Agregado de productos al Carrito */
+                    /* Agregado de producto al Carrito por boton de compra*/
                     $(`#btn-${prenda.id}`).click(function (e) {
                         
                         /* Animacion de agregado al carrito */
@@ -111,23 +112,29 @@ $(document).ready(function (e) {
                                              .fadeIn(200);
             
                         });
+                        /* Fin animacion */
             
                         /* Armado del pedido */
+                        /* Guardamos id del producto */
                         let productoSeleccionadoId = parseInt(prenda.id);
-            
+                        
+                        /* Buscamos en el catalogo el producto con el mismo id y lo guardamos en una variable */
                         let productoElegido = catalogo.find(producto => producto.id === productoSeleccionadoId)
-            
+                        
+                        /* Guardamos los datos en un nuevo objeto */
                         let pedido = new ProductoPedido(contadorProductos, productoElegido.producto, productoElegido.img, productoElegido.precio);
-            
+                        
+                        /* Agregamos al array de pedido */
                         arrayPedido.push(pedido);
-            
-                        /* Guardado del predido al Local Storage */
+                        
+                        /* Guardado del pedido actualizado en el Local Storage */
                         localStorage.setItem('pedido', JSON.stringify(arrayPedido))
             
-            
-                        /* Pintado producto seleccionado al carrito */
+                        /* Pintado producto seleccionado en el carrito */
+                        /* Busqueda de producto en catalogo */
                         let productoSeleccionado = catalogo.find(producto => producto.id === prenda.id);
                         
+                        /* Control de escritura en el carrito, para evitar desborde de productos, maximo 20 productos mostrados */
                         if (JSON.parse(localStorage.getItem('contador')) < 20) {
                             $('#grilla-de-compra').append(
                                 `      
@@ -153,6 +160,8 @@ $(document).ready(function (e) {
                     
                         `);
                     });
+
+                    
 
                 };
             };
@@ -220,7 +229,7 @@ $('#vaciar-carrito').click(function (e) {
     let itemsABorrar = document.getElementById('grilla-de-compra');
     itemsABorrar.parentNode.removeChild(itemsABorrar);
     arrayPedido = [];
-    contador = 1;
+    contadorProductos = 1;
     $('#contenedor-grilla').append(
         `      
         <section id="grilla-de-compra">
